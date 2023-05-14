@@ -1,0 +1,8 @@
+<ng-container *ngIf="photographer; else loading">
+    <button (click)="goBack()">Volver</button>
+
+    {{ photographer.email }}
+</ng-container>
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>
