@@ -11,9 +11,11 @@ import { Location } from '@angular/common';
   styleUrls: ['./file.component.scss'],
 })
 export class FileComponent {
-  id!: string;
 
+  id!: string;
   photographer!: Result;
+  favAdded: boolean = false
+
 
   constructor(
     private readonly photographerApiS: PhotographerApiService,
@@ -29,7 +31,6 @@ export class FileComponent {
     );
   }
 
-  goBack() {
-    this.location.back();
-  }  
+  goBack() { this.location.back() }
+
 }

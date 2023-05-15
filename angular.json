@@ -31,7 +31,7 @@
             ],
             "styles": [
               "node_modules/primeicons/primeicons.css",
-              "primeng/resources/themes/arya-orange/theme.css",
+              "primeng/resources/themes/nano/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeflex/primeflex.scss",
               "src/styles.scss"

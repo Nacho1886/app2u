@@ -1,0 +1,33 @@
+<p-card class="max-w-26rem w-full">
+  <ng-template class="cursor-pointer" pTemplate="header">
+    <div class="customImage h-8rem">
+      <img
+        class="w-full"
+        [src]="photographer.image"
+        [alt]="photographer.last_name"
+        (click)="goToPhotographer(photographer.id)"
+      />
+    </div>
+  </ng-template>
+  <div class="flex justify-content-center mt-2">
+    <div class="col-11">
+      <div class="grid">
+        <h3 class="col-10">
+          {{ photographer.first_name + " " + photographer.last_name }}
+        </h3>
+        <div class="flex align-content-center flex-wrap h-3rem">
+          <img
+            class="cursor-pointer svg"
+            (click)="favAdded = !favAdded"
+            [src]="
+              favAdded
+                ? '../../../../assets/Resources/ic_heart_fill.svg'
+                : '../../../../assets/Resources/ic_heart.svg'
+            "
+            alt="heart"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</p-card>

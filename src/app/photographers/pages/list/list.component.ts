@@ -26,7 +26,8 @@ export class ListComponent implements OnInit {
   }
 
   @HostListener('window:scroll') onScroll() {
-    const windowScrolled = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+    const windowScrolled =
+      window.innerHeight + window.scrollY >= document.body.offsetHeight;
     const dataNeeded = !this.loadingData && !this.data.allData;
 
     if (windowScrolled && dataNeeded) this.loadingEvent();
@@ -34,13 +35,12 @@ export class ListComponent implements OnInit {
 
   loadingEvent() {
     this.loadingData = true;
-    this.photographerService.getPhotographers()
-      .subscribe(() => this.loadingData = false);
+    this.photographerService
+      .getPhotographers()
+      .subscribe(() => (this.loadingData = false));
   }
 
   goToPhotographer(id: number) {
-    /* const urlArray = urlString.split('/').reverse().filter(e => e)
-    const id = urlArray.find(e => !isNaN(Number(e))) */
     this.router.navigate([`photographers/${id}`]);
   }
 }

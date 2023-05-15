@@ -21,7 +21,6 @@ export class PhotographerService {
 
   public getPhotographers() {
     const data = this._photographerData$.getValue();
-    const dataFullFiled = data.allData;
 
     const offset = data.results.length;
 
@@ -34,26 +33,6 @@ export class PhotographerService {
       })
     );
   }
-  /*   public getPhotographerById(id: number): void {
-
-    const data = this._photographerData$.getValue()
-    const dataFullFiled = data.allData
-    
-    if (!dataFullFiled) {
-
-      const offset = data.results.length
-      
-      this.photographerApiS.getAll(offset).subscribe(
-        results => {
-          data.results = data.results.concat(results)
-          if (results.length === 0) data.allData = true
-          this._photographerData$.next(data)
-          localStorage.setItem('photographer-data', JSON.stringify(data))
-        }
-        )
-      }
-    
-  } */
 
   public loadPhotographers(): BehaviorSubject<LocalData> {
     return this._photographerData$;

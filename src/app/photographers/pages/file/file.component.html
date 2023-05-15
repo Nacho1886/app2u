@@ -1,8 +1,44 @@
 <ng-container *ngIf="photographer; else loading">
-    <button (click)="goBack()">Volver</button>
-
-    {{ photographer.email }}
+  <header>
+    <div class="h-4rem flex align-content-center flex-wrap">
+      <img
+        class="col-2 cursor-pointer svg"
+        (click)="goBack()"
+        src="../../../../assets/Resources/ic_back_arrow.svg"
+        alt="back_arrow"
+      />
+    </div>
+    <div class="customImage h-12rem">
+      <img
+        class="w-full"
+        [src]="photographer.image"
+        [alt]="photographer.last_name"
+      />
+    </div>
+  </header>
+  <article class="flex justify-content-center my-2">
+        <div class="col-11">
+            <section class="grid">
+              <h1 class="col-10">
+                {{ photographer.first_name + " " + photographer.last_name }}
+              </h1>
+              <div class="flex align-content-center flex-wrap">
+                  <img
+                    class="cursor-pointer svg"
+                    (click)="favAdded = !favAdded"
+                    [src]="
+                      favAdded
+                        ? '../../../../assets/Resources/ic_heart_fill.svg'
+                        : '../../../../assets/Resources/ic_heart.svg'
+                    "
+                    alt="heart"
+                  />
+              </div>
+            </section>
+            <p>{{ photographer.description }}</p>
+        </div>
+  </article>
 </ng-container>
 <ng-template #loading>
-    <app-loading></app-loading>
+  <app-loading></app-loading>
 </ng-template>

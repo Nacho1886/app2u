@@ -1,4 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Result } from 'src/app/api/interfaces';
 
 @Component({
@@ -9,6 +11,12 @@ import { Result } from 'src/app/api/interfaces';
 })
 export class PhotographerCardComponent {
   @Input() photographer!: Result;
+  favAdded: boolean = false
 
-  constructor() { }
+
+  constructor(private router: Router) { }
+
+  goToPhotographer(id: number) {
+    this.router.navigate([`photographers/${id}`]);
+  }
 }

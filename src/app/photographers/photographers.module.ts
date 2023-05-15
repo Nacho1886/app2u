@@ -5,9 +5,11 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { PhotographersRoutingModule } from './photographers-routing.module';
 
-import { PhotographerCardComponent } from './pages/list/components/starship-card/photographer-card.component';
+import { PhotographerCardComponent } from './pages/list/components/photographer-card/photographer-card.component';
 import { ListComponent } from './pages/list/list.component';
 import { FileComponent } from './pages/file/file.component';
+import { MenuComponent } from './pages/list/components/menu/menu.component';
+import { HeaderComponent } from './pages/list/components/header/header.component';
 
 
 
@@ -15,7 +17,9 @@ import { FileComponent } from './pages/file/file.component';
   declarations: [
     ListComponent,
     PhotographerCardComponent,
-    FileComponent
+    FileComponent,
+    MenuComponent,
+    HeaderComponent
 
   ],
   imports: [
